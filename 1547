@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+int ball[3] = {1, 0, 0};
+int main(){
+    int m;
+    scanf("%d", &m); //위치를 바꾼 횟수 M
+    if(m <= 50){
+        for (int i = 0; i < m; i++){
+            int x, y; int temp; 
+            scanf("%d %d", &x, &y);
+            if(x <= 3 && y <= 3) {
+                //*주의, 입력값은 배열값의 -1임.
+                temp = ball[x-1];
+                ball[x-1] = ball[y-1];
+                ball[y-1] = temp;
+            }
+            else return 0;
+        }
+           for(int i = 0; i < 3; i++){
+                if(ball[i] == 1)
+                    printf("%d", i+1);
+            }
+    }
+    else return 0;
+    return 0;
+}
